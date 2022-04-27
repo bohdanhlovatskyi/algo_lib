@@ -19,10 +19,9 @@ enable_testing()
 add_executable(
         ${PROJECT_NAME}
         main.cpp
-        # ../thread_pool/thread_pool.cpp
 )
 
-# target_include_directories(${PROJECT_NAME} PRIVATE ../thread_pool)
+target_include_directories(${PROJECT_NAME} PRIVATE ../algo_lib)
 
 target_link_libraries(
         ${PROJECT_NAME}
