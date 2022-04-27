@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.15)
 
 #! CHANGE YOUR PROJECT NAME
 #  It is used as your project's main executable name. 
-set(PROJECT_NAME template)
+set(PROJECT_NAME example)
 project(${PROJECT_NAME} C CXX) # project(${PROJECT_NAME} C CXX ASM)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -31,7 +31,7 @@ set(ENABLE_PVS_STUDIO OFF)
 #! UndefinedBehaviorSanitizer (UBSan)
 #  Info: https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html
 set(ENABLE_UBSan OFF)
-#! AddressSanitizer -- detects use after free or after scope exit,
+#! AddressSanitizer -- detects use aftser free or after scope exit,
 #  memory overflows and leaks.  
 #  Info: https://github.com/google/sanitizers/wiki/AddressSanitizer
 set(ENABLE_ASAN OFF)
@@ -59,13 +59,6 @@ add_executable(${PROJECT_NAME} main.cpp)
 
 #! Put path to your project headers
 target_include_directories(${PROJECT_NAME} PRIVATE algo_lib)
-
-#! Add external packages
-# options_parser requires boost::program_options library
-find_package(Boost 1.71.0 COMPONENTS program_options system REQUIRED)
-target_include_directories(${PROJECT_NAME} PRIVATE ${Boost_INCLUDE_DIR})
-target_link_libraries(${PROJECT_NAME} Boost::program_options Boost::system)
-
 						
 ##########################################################
 # Fixed CMakeLists.txt part 

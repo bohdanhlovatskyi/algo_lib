@@ -1,9 +1,14 @@
+// This is a personal academic project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 #include "gtest/gtest.h"
 
 #include <algorithm>
 #include <iostream>
 #include <filesystem>
 #include <fstream>
+#include <map>
+#include <sstream>
 
 #include "../algo_lib/algo_lib.hpp"
 

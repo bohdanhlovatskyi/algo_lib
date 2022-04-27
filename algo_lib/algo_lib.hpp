@@ -1,3 +1,6 @@
+// This is a personal academic project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 #ifndef MY_ALGO_LIB__
 #define MY_ALGO_LIB__
 
@@ -5,6 +8,8 @@
 #if defined(__STDC_LIB_EXT1__)
 #define __STDC_WANT_LIB_EXT1__ 1
 #endif
+
+#include <cstring>
 
 namespace {
     // takes into account difference between POD and not POD types
@@ -36,9 +41,9 @@ namespace {
                              OutputIt o_first, std::input_iterator_tag) {
         using underlying_type = typename std::iterator_traits<InputIt>::value_type;
 #if defined(__STDC_LIB_EXT1__)
-        memcpy_s(&*o_first, &*first, (last - first) * sizeof(underlying_type));
+        std::memcpy_s(&*o_first, &*first, (last - first) * sizeof(underlying_type));
 #endif
-        memcpy(&*o_first, &*first, (last - first) * sizeof(underlying_type));
+        std::memcpy(&*o_first, &*first, (last - first) * sizeof(underlying_type));
         return o_first;
     }
 }

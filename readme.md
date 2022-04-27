@@ -1,44 +1,43 @@
-<mark>Template for your README. Remove all unused parts and instructions</mark>
+# Lab work <mark>4</mark>: <mark>Algorithms</mark>
+Authors (team): <mark>bohdan hlovatskyi: https://github.com/bohdanhlovatskyi</mark><br>
 
-# Lab work <mark>NUMBER</mark>: <mark>SHORT TOPIC</mark>
-Authors (team): <mark>AUTHORS WITH GITHUB LINKS</mark><br>
-Variant: <mark>VARIANT SHOULD BE HERE</mark>
 ## Prerequisites
 
-<mark>LIST LIBRARIES/TOOLS/OTHER UTILITIES THAT NEED TO BE INSTALLED (E.G. GCC, OPENMP, CMAKE ETC)</mark>
+- C++17
+- GTest to run the tests
 
 ### Compilation
 
-<mark>HOW TO COMPILE YOUR PROGRAM? (RECOMMENDED: ./comile.sh)</mark>
+```shell
+./compile.sh
+bin/example
 
-### Installation
+# or direclty via CMakeLists
+mdkir build
+cd build
+cmake .. && make
+```
 
-<mark>DESCRIBE THE INSTALLATION PROCESS (USE ./dependencies FOLDER)</mark>
+```shell
+# to run the tests
+cd test
+mkdir build
+cd build
+cmake .. && make
+./tests
+```
 
-<mark>Note: For Python scripts, You must add `requirenments.txt` 
-file and add your env to the `.gitignore` file!</mark>
+### Important
+Everything tested only on MacOS ((. Though sanitizers and PVS-Studio check was conducted.
 
 ### Usage
 
-<mark>PROVIDE AN EXAMPLE OF HOW TO RUN YOUR PROGRAM (IT CAN BE A_flag COMMAND LINE WITH INPUT AND EXPECTED OUTPUT)</mark>
-
-<mark>Note: if your project needs or generates any data, media and so on -- put them
-into the data folder</mark> 
-
-### Important!
-
-<mark>WHAT ELSE SHOULD WE KNOW ABOUT YOUR WORK? (E.G. KNOWN ISSUES, BUGS, SPECIAL BEHAVIOR ETC)</mark>
+There is example of usage in the **main.cpp** file. More examples are in the tests:
+- Sum of squares via map_reduce
+- The Longest string ~~on the wild west~~ in the iterator
+- Count words in text files given as vector of paths
 
 ### Results
 
-<mark>DESCRIBE THE RESULTS OF THE WORK YOU DID. WHAT DID YOU LEARN OR FIND INTERESTING?</mark>
-
-# Additional tasks
-<mark>IF APPLICABLE, LIST ALL THE EXTRA FEATURES YOU ADDED. PROVIDE DETAILS<mark>
-
-# ATTENTION!
-  
-Additional tasks not listed in the previous paragraph would not be graded.
-
-Be sure to provide a complete list of authors.
-
+Tests do pass!
+![](results/result.png)
