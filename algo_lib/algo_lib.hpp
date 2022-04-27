@@ -114,16 +114,16 @@ namespace ml {
                                          UnaryOperatrion mapper,
                                          BinaryOperation reducer)
     {
-        using UT = typename std::iterator_traits<InputIt>::value_type;
+        using UT = decltype(mapper(*first));
         using diff = typename std::iterator_traits<InputIt>::difference_type;
 
         const diff size = last - first;
-        UT* tmp = (UT* ) ::operator new(size * sizeof(UT));
+        UT* tmp = new UT[size];
 
         ml::transform(first, last, tmp, mapper);
         auto res = reduce(tmp, tmp + size, reducer);
 
-        operator delete(tmp);
+        delete[] tmp;
 
         return res;
     }
